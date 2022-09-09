@@ -429,16 +429,14 @@ class GetCallPriceBottomSheet extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             SizedBox(height: 16),
-            Row(
-              children: [
-                Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 24),
-                  child: Text(
-                    'Selecione abaixo os DDD de origem e de Destino!',
-                    style: AppFonts.title,
-                  ),
-                ),
-              ],
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16),
+              child: Text(
+                'Selecione abaixo os DDD de origem e de Destino!',
+                style: AppFonts.title,
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+              ),
             ),
             SizedBox(height: 8),
             Padding(
@@ -454,6 +452,8 @@ class GetCallPriceBottomSheet extends StatelessWidget {
                     onTap: () => Navigator.of(context).pop(plan),
                     title: Text(
                       'DDD Origem: ${plan.sourceCod}    -     DDD Destino: ${plan.destinationCod}',
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
                     ),
                   );
                 },
@@ -473,7 +473,7 @@ class GetCallPriceBottomSheet extends StatelessWidget {
                 ],
               ),
             ),
-            SizedBox(height: 24),
+            SizedBox(height: 32),
           ],
         ),
       ),
@@ -499,16 +499,14 @@ class GetPlanBottomSheet extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             SizedBox(height: 16),
-            Row(
-              children: [
-                Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 24),
-                  child: Text(
-                    'Selecione abaixo um plano FaleMais',
-                    style: AppFonts.title,
-                  ),
-                ),
-              ],
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 16),
+              child: Text(
+                'Selecione abaixo um plano FaleMais',
+                style: AppFonts.title,
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+              ),
             ),
             SizedBox(height: 8),
             Padding(
@@ -522,7 +520,11 @@ class GetPlanBottomSheet extends StatelessWidget {
 
                   return ListTile(
                     onTap: () => Navigator.of(context).pop(plan),
-                    title: Text(plan.name ?? ''),
+                    title: Text(
+                      plan.name ?? '',
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                    ),
                   );
                 },
               ),
