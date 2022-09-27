@@ -4,23 +4,36 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:responsive_framework/responsive_framework.dart';
 
 class AppWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
-      builder: (BuildContext context, Widget? child) {
-        return Asuka.builder(context, child);
-      },
       routeInformationParser: Modular.routeInformationParser,
       routerDelegate: Modular.routerDelegate,
-      title: 'Contatos',
+      title: 'Disconts',
       debugShowCheckedModeBanner: false,
       scrollBehavior: MyCustomScrollBehavior(),
       theme: ThemeData(
         primarySwatch: AppColors.primaryBlack,
-        textTheme: GoogleFonts.ralewayTextTheme(),
+        textTheme: GoogleFonts.robotoTextTheme(),
+        primaryIconTheme: IconThemeData(color: Colors.black),
       ),
+      builder: (BuildContext context, Widget? child) {
+        return ResponsiveWrapper.builder(
+          Asuka.builder(context, child),
+          minWidth: 480,
+          defaultScale: true,
+          breakpoints: [
+            const ResponsiveBreakpoint.resize(480, name: MOBILE),
+            const ResponsiveBreakpoint.resize(600, name: DESKTOP),
+          ],
+          background: Container(
+            color: const Color(0xFFF5F5F5),
+          ),
+        );
+      },
     );
   }
 }

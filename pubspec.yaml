@@ -34,7 +34,11 @@ dependencies:
   google_fonts: ^3.0.1
   mobx: ^2.0.7+5
   flutter_native_splash: ^2.2.9
-  horizontal_data_table: ^4.1.2+2
+  responsive_framework: ^0.2.0
+  dartz: ^0.10.1
+  dio: ^4.0.6
+  hive: ^2.2.3
+  path_provider: ^2.0.11
   
   flutter:
     sdk: flutter
@@ -53,7 +57,7 @@ dev_dependencies:
   
 flutter_native_splash:
   color: "#000000" 
-  image: assets/images/telzir.png
+  image: assets/logo.png
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
@@ -71,6 +75,7 @@ flutter:
 
   assets:
     - assets/images/
+    - assets/category/
 
 scripts:
   build: flutter pub run build_runner build

@@ -17,4 +17,10 @@ class AppColors {
       900: Color(0xFF000000),
     },
   );
+
+  static Color green = Color.fromARGB(255, 0, 153, 51);
+  static Color grey = const Color(0xFF57575A);
+  static Color white = const Color(0xFFFFFFFF);
+  static Color red = const Color(0xFFFF0000);
+  static Color secondary = const Color(0xFFFFC400);
 }
