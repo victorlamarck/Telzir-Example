@@ -20,6 +20,7 @@ class OnBoardingPageState extends State<OnBoardingPage> {
             'assets/images/logo.jpg',
           ),
         ),
+        centerTitle: true,
         backgroundColor: Colors.white,
         iconTheme: IconThemeData(color: Colors.black),
         elevation: 0,
@@ -102,19 +103,21 @@ class OnBoardingPageState extends State<OnBoardingPage> {
                   ),
                   textAlign: TextAlign.center,
                 ),
-                const SizedBox(height: 8),
-                Text(
-                  'CLIQUE AQUI!',
-                  style: AppFonts.roboto.copyWith(
-                    fontSize: 14,
-                    fontWeight: FontWeight.w900,
-                    color: AppColors.green,
+                TextButton(
+                  child: Text(
+                    'CLIQUE AQUI!',
+                    style: AppFonts.roboto.copyWith(
+                      fontSize: 14,
+                      fontWeight: FontWeight.w900,
+                      color: AppColors.green,
+                    ),
+                    textAlign: TextAlign.center,
                   ),
-                  textAlign: TextAlign.center,
+                  onPressed: () => Modular.to.pushNamed('/register/'),
                 ),
               ],
             ),
-            const SizedBox(height: 32),
+            const SizedBox(height: 48),
           ],
         ),
       ),

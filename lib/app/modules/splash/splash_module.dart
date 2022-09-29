@@ -13,8 +13,8 @@ class SplashModule extends Module {
   @override
   final List<Bind> binds = [
     Bind.lazySingleton((i) => LoginStore()),
-    Bind.lazySingleton((i) => RegisterStore()),
     Bind.lazySingleton((i) => SplashStore()),
+    Bind.lazySingleton((i) => RegisterStore()),
   ];
 
   @override
