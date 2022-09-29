@@ -1,4 +1,7 @@
+import 'package:asuka/asuka.dart';
+import 'package:disconts/app/modules/splash/register/register_page.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 import 'package:mobx/mobx.dart';
 
 part 'register_store.g.dart';
@@ -63,5 +66,17 @@ abstract class _RegisterStoreBase with Store {
       isObscuredConfirmation = !isObscuredConfirmation;
       confirmationPasswordIcon = Icon(Icons.visibility_off, color: Colors.grey);
     }
+  }
+
+  @action
+  registerAccount() async {
+    await Asuka.showDialog(
+      barrierColor: Colors.black54.withOpacity(0.3),
+      builder: (context) {
+        return ConfirmationDialog();
+      },
+    );
+
+    Modular.to.pushNamed('/home/');
   }
 }

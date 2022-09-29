@@ -1,12 +1,12 @@
-import 'package:example/app/modules/splash/on_boarding/on_boarding_module.dart';
-import 'package:example/app/modules/splash/recovery/recovery_module.dart';
-import 'package:example/app/modules/splash/register/register_page.dart';
-import 'package:example/app/modules/splash/register/register_store.dart';
-import 'package:example/app/modules/splash/login/login_page.dart';
-import 'package:example/app/modules/splash/login/login_store.dart';
-import 'package:example/app/modules/home/home_module.dart';
-import 'package:example/app/modules/splash/splash_Page.dart';
-import 'package:example/app/modules/splash/splash_store.dart';
+import 'package:disconts/app/modules/splash/on_boarding/on_boarding_module.dart';
+import 'package:disconts/app/modules/splash/recovery/recovery_module.dart';
+import 'package:disconts/app/modules/splash/register/register_page.dart';
+import 'package:disconts/app/modules/splash/register/register_store.dart';
+import 'package:disconts/app/modules/splash/login/login_page.dart';
+import 'package:disconts/app/modules/splash/login/login_store.dart';
+import 'package:disconts/app/modules/home/home_module.dart';
+import 'package:disconts/app/modules/splash/splash_Page.dart';
+import 'package:disconts/app/modules/splash/splash_store.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
 class SplashModule extends Module {

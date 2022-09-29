@@ -1,8 +1,7 @@
-import 'package:example/app/shared/core/app_colors.dart';
-import 'package:example/app/shared/core/app_fonts.dart';
-import 'package:example/app/shared/widgets/advanced_image.dart';
+import 'package:disconts/app/shared/core/app_colors.dart';
+import 'package:disconts/app/shared/core/app_fonts.dart';
+import 'package:disconts/app/shared/widgets/advanced_image.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:mobx/mobx.dart';
 
@@ -68,6 +67,7 @@ class CategoriesPageState extends State<CategoriesPage> {
                     ),
                     itemBuilder: (_, index) {
                       return CategoryCard(
+                        id: index,
                         imageUrl: '',
                         name: 'Teste',
                       );
@@ -106,11 +106,13 @@ class CategoriesPageState extends State<CategoriesPage> {
 class CategoryCard extends StatefulWidget {
   final String? imageUrl;
   final String? name;
+  final int? id;
 
   const CategoryCard({
     super.key,
     required this.imageUrl,
     required this.name,
+    required this.id,
   });
 
   @override
@@ -123,17 +125,17 @@ class _CategoryCardState extends State<CategoryCard> {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () => !isMarked,
-      child: SizedBox(
-        height: 200,
+    return SizedBox(
+      height: 200,
+      child: GestureDetector(
+        onTap: () {
+          isMarked = !isMarked;
+          setState(() {});
+        },
         child: Column(
           children: [
-            Observer(
-              builder: (_) {
-                if (isMarked) {
-                  return Stack(
-                    fit: StackFit.expand,
+            isMarked
+                ? Stack(
                     children: [
                       AdvancedImage(
                         imageUrl: widget.imageUrl,
@@ -141,6 +143,8 @@ class _CategoryCardState extends State<CategoryCard> {
                         width: 150,
                       ),
                       Positioned(
+                        top: 0,
+                        right: 0,
                         child: Container(
                           height: 39,
                           width: 39,
@@ -156,27 +160,19 @@ class _CategoryCardState extends State<CategoryCard> {
                         ),
                       ),
                     ],
-                  );
-                }
-
-                return AdvancedImage(
-                  imageUrl: widget.imageUrl,
-                  height: 150,
-                  width: 150,
-                );
-              },
-            ),
-            Observer(
-              builder: (_) {
-                return Text(
-                  widget.name ?? '',
-                  style: AppFonts.openSans.copyWith(
-                    fontSize: 14,
-                    fontWeight: FontWeight.bold,
-                    color: isMarked ? AppColors.green : AppColors.primaryBlack,
+                  )
+                : AdvancedImage(
+                    imageUrl: widget.imageUrl,
+                    height: 150,
+                    width: 150,
                   ),
-                );
-              },
+            Text(
+              widget.name ?? '',
+              style: AppFonts.openSans.copyWith(
+                fontSize: 14,
+                fontWeight: FontWeight.bold,
+                color: isMarked ? AppColors.green : AppColors.primaryBlack,
+              ),
             ),
           ],
         ),

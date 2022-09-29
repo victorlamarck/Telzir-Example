@@ -1,8 +1,8 @@
 import 'package:dio/dio.dart';
-import 'package:example/app/app_store.dart';
-import 'package:example/app/modules/splash/splash_module.dart';
-import 'package:example/app/shared/repositories/user_repository.dart';
-import 'package:example/app/shared/services/hive_service.dart';
+import 'package:disconts/app/app_store.dart';
+import 'package:disconts/app/modules/splash/splash_module.dart';
+import 'package:disconts/app/shared/repositories/user_repository.dart';
+import 'package:disconts/app/shared/services/hive_service.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
 class AppModule extends Module {

@@ -1,6 +1,6 @@
-import 'package:example/app/modules/splash/login/login_store.dart';
-import 'package:example/app/shared/core/app_colors.dart';
-import 'package:example/app/shared/core/app_fonts.dart';
+import 'package:disconts/app/modules/splash/login/login_store.dart';
+import 'package:disconts/app/shared/core/app_colors.dart';
+import 'package:disconts/app/shared/core/app_fonts.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
@@ -152,17 +152,19 @@ class LoginPageState extends State<LoginPage> {
                 child: SizedBox(
                   height: 48,
                   child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () =>
+                        Modular.to.pushNamed('/recovery/confirmation'),
                     child: Text(
-                      'Entrar',
+                      'Enviar',
                       style: AppFonts.roboto.copyWith(
                         fontSize: 18,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
                     style: ButtonStyle(
-                        shape: MaterialStateProperty.all(RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(12)))),
+                      shape: MaterialStateProperty.all(RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(12))),
+                    ),
                   ),
                 ),
               ),
@@ -188,7 +190,7 @@ class LoginPageState extends State<LoginPage> {
                         color: AppColors.green,
                       ),
                     ),
-                    onPressed: () {},
+                    onPressed: () => Modular.to.pushNamed('/register/'),
                   ),
                 ],
               ),

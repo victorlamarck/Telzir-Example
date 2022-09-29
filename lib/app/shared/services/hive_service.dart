@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'package:dartz/dartz.dart';
-import 'package:example/app/shared/exceptions/custom_exception.dart';
-import 'package:example/app/shared/interfaces/local_storage_interface.dart';
+import 'package:disconts/app/shared/exceptions/custom_exception.dart';
+import 'package:disconts/app/shared/interfaces/local_storage_interface.dart';
 import 'package:hive/hive.dart';
 import 'package:path_provider/path_provider.dart';
 

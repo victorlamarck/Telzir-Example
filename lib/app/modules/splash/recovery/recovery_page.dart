@@ -1,6 +1,6 @@
-import 'package:example/app/shared/core/app_fonts.dart';
+import 'package:disconts/app/shared/core/app_fonts.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:example/app/modules/splash/recovery/recovery_store.dart';
+import 'package:disconts/app/modules/splash/recovery/recovery_store.dart';
 import 'package:flutter/material.dart';
 
 class RecoveryPage extends StatefulWidget {

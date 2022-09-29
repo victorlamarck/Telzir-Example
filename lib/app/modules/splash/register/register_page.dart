@@ -1,9 +1,10 @@
-import 'package:example/app/modules/splash/register/register_store.dart';
-import 'package:example/app/shared/core/app_colors.dart';
-import 'package:example/app/shared/core/app_fonts.dart';
+import 'package:disconts/app/modules/splash/register/register_store.dart';
+import 'package:disconts/app/shared/core/app_colors.dart';
+import 'package:disconts/app/shared/core/app_fonts.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:lottie/lottie.dart';
 
 class RegisterPage extends StatefulWidget {
   const RegisterPage({Key? key}) : super(key: key);
@@ -680,8 +681,7 @@ class RegistryThirdPage extends StatelessWidget {
               height: 48,
               width: double.infinity,
               child: ElevatedButton(
-                onPressed: () =>
-                    Modular.to.pushNamed('/on_boarding/categories'),
+                onPressed: controller.registerAccount,
                 child: Text(
                   'Cadastrar',
                   style: AppFonts.roboto.copyWith(
@@ -697,6 +697,60 @@ class RegistryThirdPage extends StatelessWidget {
           ),
           const SizedBox(height: 16),
         ],
+      ),
+    );
+  }
+}
+
+class ConfirmationDialog extends StatelessWidget {
+  const ConfirmationDialog({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return AlertDialog(
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(8),
+      ),
+      content: SingleChildScrollView(
+        child: ListBody(
+          children: <Widget>[
+            Stack(
+              alignment: Alignment.center,
+              children: [
+                Icon(
+                  Icons.check_circle_rounded,
+                  size: 125,
+                  color: Colors.green,
+                ),
+                Lottie.asset(
+                  'assets/lotties/congrats.json',
+                  height: 200,
+                  width: 250,
+                  fit: BoxFit.cover,
+                  alignment: Alignment.center,
+                ),
+                Positioned(
+                  top: 0,
+                  right: 0,
+                  child: IconButton(
+                    icon: Icon(Icons.close),
+                    onPressed: () => Navigator.of(context).pop(),
+                  ),
+                ),
+              ],
+            ),
+            Center(
+              child: Text(
+                'Cadastro realizado\ncom sucesso!',
+                textAlign: TextAlign.center,
+                style: AppFonts.openSans.copyWith(
+                  fontSize: 20,
+                  fontWeight: FontWeight.w900,
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

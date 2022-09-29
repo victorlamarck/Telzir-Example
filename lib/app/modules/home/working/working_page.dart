@@ -1,4 +1,4 @@
-import 'package:example/app/shared/core/app_fonts.dart';
+import 'package:disconts/app/shared/core/app_fonts.dart';
 import 'package:flutter/material.dart';
 
 class WorkingPage extends StatelessWidget {

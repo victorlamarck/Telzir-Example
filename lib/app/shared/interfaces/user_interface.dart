@@ -1,6 +1,6 @@
 import 'package:dartz/dartz.dart';
-import 'package:example/app/shared/exceptions/custom_exception.dart';
-import 'package:example/app/shared/models/user_model.dart';
+import 'package:disconts/app/shared/exceptions/custom_exception.dart';
+import 'package:disconts/app/shared/models/user_model.dart';
 
 abstract class IUser {
   /// Return your current user.

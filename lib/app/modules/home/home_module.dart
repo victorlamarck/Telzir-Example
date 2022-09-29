@@ -1,4 +1,4 @@
-import 'package:example/app/modules/home/working/working_page.dart';
+import 'package:disconts/app/modules/home/working/working_page.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import '../home/home_store.dart';
 

@@ -1,7 +1,7 @@
 import 'package:asuka/asuka.dart';
-import 'package:example/app/shared/interfaces/local_storage_interface.dart';
-import 'package:example/app/shared/interfaces/user_interface.dart';
-import 'package:example/app/shared/models/user_model.dart';
+import 'package:disconts/app/shared/interfaces/local_storage_interface.dart';
+import 'package:disconts/app/shared/interfaces/user_interface.dart';
+import 'package:disconts/app/shared/models/user_model.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:mobx/mobx.dart';
 

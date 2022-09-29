@@ -1,5 +1,5 @@
 import 'package:dartz/dartz.dart';
-import 'package:example/app/shared/exceptions/custom_exception.dart';
+import 'package:disconts/app/shared/exceptions/custom_exception.dart';
 
 abstract class ILocalStorage {
   /// Save a token on local storage.

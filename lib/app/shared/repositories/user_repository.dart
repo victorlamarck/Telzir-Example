@@ -1,11 +1,11 @@
 import 'package:dio/dio.dart';
-import 'package:example/app/shared/core/app_core.dart';
-import 'package:example/app/shared/exceptions/custom_exception.dart';
+import 'package:disconts/app/shared/core/app_core.dart';
+import 'package:disconts/app/shared/exceptions/custom_exception.dart';
 import 'package:dartz/dartz.dart';
-import 'package:example/app/shared/interfaces/local_storage_interface.dart';
-import 'package:example/app/shared/interfaces/user_interface.dart';
-import 'package:example/app/shared/models/user_model.dart';
-import 'package:example/app/shared/services/internet_service.dart';
+import 'package:disconts/app/shared/interfaces/local_storage_interface.dart';
+import 'package:disconts/app/shared/interfaces/user_interface.dart';
+import 'package:disconts/app/shared/models/user_model.dart';
+import 'package:disconts/app/shared/services/internet_service.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
 class UserRepository implements IUser {

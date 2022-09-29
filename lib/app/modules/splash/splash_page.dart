@@ -1,6 +1,6 @@
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:example/app/modules/splash/splash_store.dart';
+import 'package:disconts/app/modules/splash/splash_store.dart';
 import 'package:flutter/material.dart';
 
 class SplashPage extends StatefulWidget {

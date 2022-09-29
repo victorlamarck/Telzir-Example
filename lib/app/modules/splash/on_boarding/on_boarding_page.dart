@@ -1,5 +1,5 @@
-import 'package:example/app/shared/core/app_colors.dart';
-import 'package:example/app/shared/core/app_fonts.dart';
+import 'package:disconts/app/shared/core/app_colors.dart';
+import 'package:disconts/app/shared/core/app_fonts.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 

@@ -1,5 +1,5 @@
-import 'package:example/app/modules/splash/recovery/confirmation/confirmation_store.dart';
-import 'package:example/app/shared/core/app_fonts.dart';
+import 'package:disconts/app/modules/splash/recovery/confirmation/confirmation_store.dart';
+import 'package:disconts/app/shared/core/app_fonts.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
@@ -191,7 +191,7 @@ class ConfirmationPageState extends State<ConfirmationPage> {
             child: SizedBox(
               height: 48,
               child: ElevatedButton(
-                onPressed: () => Modular.to.pushNamed('/recovery/confirmation'),
+                onPressed: () => Modular.to.navigate('/login/'),
                 child: Text(
                   'Enviar',
                   style: AppFonts.roboto.copyWith(

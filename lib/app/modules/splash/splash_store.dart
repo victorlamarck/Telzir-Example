@@ -1,4 +1,4 @@
-import 'package:example/app/app_store.dart';
+import 'package:disconts/app/app_store.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:mobx/mobx.dart';
 
