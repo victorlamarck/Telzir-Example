@@ -72,7 +72,8 @@ class OnBoardingPageState extends State<OnBoardingPage> {
             SizedBox(
               height: 48,
               child: OutlinedButton(
-                onPressed: () {},
+                onPressed: () =>
+                    Modular.to.pushNamed('/on_boarding/categories'),
                 child: Text(
                   'Entrar sem log in',
                   style: AppFonts.roboto.copyWith(

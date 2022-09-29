@@ -37,7 +37,7 @@ class AdvancedImage extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.all(16),
           child: Image.asset(
-            'assets/images/logo.png',
+            'assets/images/logo.jpg',
             fit: BoxFit.contain,
             width: width,
             height: height,
@@ -159,7 +159,7 @@ class DetailImageScreen extends StatelessWidget {
                   errorWidget: (context, url, data) {
                     return Center(
                       child: Image.asset(
-                        'assets/images/logo.png',
+                        'assets/images/logo.jpg',
                         fit: BoxFit.contain,
                       ),
                     );
