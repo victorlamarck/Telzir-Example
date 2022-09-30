@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:disconts/app/app_store.dart';
+import 'package:disconts/app/modules/home/home_module.dart';
 import 'package:disconts/app/modules/splash/splash_module.dart';
 import 'package:disconts/app/shared/repositories/user_repository.dart';
 import 'package:disconts/app/shared/services/hive_service.dart';
@@ -16,6 +17,6 @@ class AppModule extends Module {
   @override
   final List<ModularRoute> routes = [
     ModuleRoute(Modular.initialRoute, module: SplashModule()),
-    ModuleRoute('/home', module: SplashModule()),
+    ModuleRoute('/home', module: HomeModule()),
   ];
 }

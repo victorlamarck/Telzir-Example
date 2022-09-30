@@ -17,22 +17,28 @@ class LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: SizedBox(
-          height: 30,
-          child: Image.asset(
-            'assets/images/logo.jpg',
-          ),
-        ),
-        backgroundColor: Colors.white,
-        iconTheme: IconThemeData(color: Colors.black),
-        elevation: 0,
-      ),
       body: SafeArea(
         child: Form(
           key: controller.keyForm,
           child: ListView(
             children: <Widget>[
+              Stack(
+                children: [
+                  Image.asset(
+                    'assets/images/logo.jpg',
+                    height: 250,
+                    width: double.infinity,
+                  ),
+                  Positioned(
+                    top: 0,
+                    left: 0,
+                    child: IconButton(
+                      onPressed: () => Navigator.of(context).pop(),
+                      icon: Icon(Icons.arrow_back_rounded),
+                    ),
+                  ),
+                ],
+              ),
               const SizedBox(height: 30),
               Row(
                 children: [

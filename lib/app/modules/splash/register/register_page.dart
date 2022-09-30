@@ -717,14 +717,17 @@ class ConfirmationDialog extends StatelessWidget {
             Stack(
               alignment: Alignment.center,
               children: [
-                Icon(
-                  Icons.check_circle_rounded,
-                  size: 125,
-                  color: Colors.green,
+                Positioned(
+                  top: 50,
+                  child: Icon(
+                    Icons.check_circle_rounded,
+                    size: 125,
+                    color: Colors.green,
+                  ),
                 ),
                 Lottie.asset(
                   'assets/lotties/congrats.json',
-                  height: 200,
+                  height: 180,
                   width: 250,
                   fit: BoxFit.cover,
                   alignment: Alignment.center,

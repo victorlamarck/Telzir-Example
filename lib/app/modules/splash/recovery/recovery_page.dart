@@ -92,7 +92,7 @@ class RecoveryPageState extends State<RecoveryPage> {
               child: ElevatedButton(
                 onPressed: () => Modular.to.pushNamed('/recovery/confirmation'),
                 child: Text(
-                  'Entrar',
+                  'Enviar',
                   style: AppFonts.roboto.copyWith(
                     fontSize: 18,
                     fontWeight: FontWeight.bold,

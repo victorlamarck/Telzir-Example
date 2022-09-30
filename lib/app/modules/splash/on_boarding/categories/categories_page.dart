@@ -133,6 +133,7 @@ class _CategoryCardState extends State<CategoryCard> {
           setState(() {});
         },
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             isMarked
                 ? Stack(
@@ -169,7 +170,7 @@ class _CategoryCardState extends State<CategoryCard> {
             Text(
               widget.name ?? '',
               style: AppFonts.openSans.copyWith(
-                fontSize: 14,
+                fontSize: 18,
                 fontWeight: FontWeight.bold,
                 color: isMarked ? AppColors.green : AppColors.primaryBlack,
               ),
