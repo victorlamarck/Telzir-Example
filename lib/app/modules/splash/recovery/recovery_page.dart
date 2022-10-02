@@ -28,7 +28,7 @@ class RecoveryPageState extends State<RecoveryPage> {
       ),
       body: SafeArea(
         child: ListView(
-          padding: const EdgeInsets.symmetric(horizontal: 21),
+          padding: const EdgeInsets.symmetric(horizontal: 20),
           children: <Widget>[
             const SizedBox(height: 8),
             Row(

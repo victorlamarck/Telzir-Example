@@ -107,6 +107,14 @@ mixin _$RegisterStore on _RegisterStoreBase, Store {
     });
   }
 
+  late final _$registerAccountAsyncAction =
+      AsyncAction('_RegisterStoreBase.registerAccount', context: context);
+
+  @override
+  Future registerAccount() {
+    return _$registerAccountAsyncAction.run(() => super.registerAccount());
+  }
+
   late final _$_RegisterStoreBaseActionController =
       ActionController(name: '_RegisterStoreBase', context: context);
 
