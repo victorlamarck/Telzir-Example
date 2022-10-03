@@ -23,7 +23,7 @@ class ProductModel {
   });
 
   Map<String, dynamic> toMap() {
-    return <String, dynamic>{
+    Map<String, dynamic> map = {
       'id': id,
       'name': name,
       'category': category?.toMap(),
@@ -32,6 +32,10 @@ class ProductModel {
       'dueDate': dueDate?.millisecondsSinceEpoch,
       'imageUrl': imageUrl,
     };
+
+    map.removeWhere((key, value) => value == null);
+
+    return map;
   }
 
   factory ProductModel.fromMap(Map<String, dynamic> map) {

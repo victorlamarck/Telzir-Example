@@ -24,7 +24,7 @@ abstract class _AppStoreBase with Store {
 
   @action
   Future<bool> login(String email, String password) async {
-    final result = await userRepository.signIn(
+    final result = await userRepository.login(
       email: email,
       password: password,
     );

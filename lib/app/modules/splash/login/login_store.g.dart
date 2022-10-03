@@ -41,6 +41,22 @@ mixin _$LoginStore on _LoginStoreBase, Store {
     });
   }
 
+  late final _$validateAsyncAction =
+      AsyncAction('_LoginStoreBase.validate', context: context);
+
+  @override
+  Future validate() {
+    return _$validateAsyncAction.run(() => super.validate());
+  }
+
+  late final _$loginAsyncAction =
+      AsyncAction('_LoginStoreBase.login', context: context);
+
+  @override
+  Future login() {
+    return _$loginAsyncAction.run(() => super.login());
+  }
+
   late final _$_LoginStoreBaseActionController =
       ActionController(name: '_LoginStoreBase', context: context);
 

@@ -107,6 +107,22 @@ mixin _$RegisterStore on _RegisterStoreBase, Store {
     });
   }
 
+  late final _$firstStepRegisterAsyncAction =
+      AsyncAction('_RegisterStoreBase.firstStepRegister', context: context);
+
+  @override
+  Future firstStepRegister() {
+    return _$firstStepRegisterAsyncAction.run(() => super.firstStepRegister());
+  }
+
+  late final _$registerAccAsyncAction =
+      AsyncAction('_RegisterStoreBase.registerAcc', context: context);
+
+  @override
+  Future registerAcc() {
+    return _$registerAccAsyncAction.run(() => super.registerAcc());
+  }
+
   late final _$registerAccountAsyncAction =
       AsyncAction('_RegisterStoreBase.registerAccount', context: context);
 

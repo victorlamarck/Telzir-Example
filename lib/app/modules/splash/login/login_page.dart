@@ -158,8 +158,7 @@ class LoginPageState extends State<LoginPage> {
                 child: SizedBox(
                   height: 48,
                   child: ElevatedButton(
-                    onPressed: () =>
-                        Modular.to.pushNamed('/recovery/confirmation'),
+                    onPressed: controller.validate,
                     child: Text(
                       'Enviar',
                       style: AppFonts.roboto.copyWith(

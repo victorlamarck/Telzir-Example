@@ -1,4 +1,7 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'dart:convert';
+
+import 'package:disconts/app/shared/models/category_model.dart';
 
 class UserModel {
   int? id;
@@ -6,7 +9,9 @@ class UserModel {
   String? token;
   String? email;
   String? password;
-  String? userName;
+  String? username;
+  String? cpfCnpj;
+  List<CategoryModel>? categories;
 
   UserModel({
     this.id,
@@ -14,26 +19,10 @@ class UserModel {
     this.token,
     this.email,
     this.password,
-    this.userName,
+    this.username,
+    this.cpfCnpj,
+    this.categories,
   });
-
-  UserModel copyWith({
-    int? id,
-    String? name,
-    String? token,
-    String? email,
-    String? password,
-    String? userName,
-  }) {
-    return UserModel(
-      id: id ?? this.id,
-      name: name ?? this.name,
-      token: token ?? this.token,
-      email: email ?? this.email,
-      password: password ?? this.password,
-      userName: userName ?? this.userName,
-    );
-  }
 
   Map<String, dynamic> toMap() {
     Map<String, dynamic> map = {
@@ -42,7 +31,9 @@ class UserModel {
       'token': token,
       'email': email,
       'password': password,
-      'userName': userName,
+      'username': username,
+      'cpf_cnpj': cpfCnpj,
+      'categories': categories?.map((x) => x.toMap()).toList(),
     };
 
     map.removeWhere((key, value) => value == null);
@@ -57,7 +48,15 @@ class UserModel {
       token: map['token'] != null ? map['token'] as String : null,
       email: map['email'] != null ? map['email'] as String : null,
       password: map['password'] != null ? map['password'] as String : null,
-      userName: map['userName'] != null ? map['userName'] as String : null,
+      username: map['username'] != null ? map['username'] as String : null,
+      cpfCnpj: map['cpf_cnpj'] != null ? map['cpf_cnpj'] as String : null,
+      categories: map['categories'] != null
+          ? List<CategoryModel>.from(
+              (map['categories'] as List<int>).map<CategoryModel?>(
+                (x) => CategoryModel.fromMap(x as Map<String, dynamic>),
+              ),
+            )
+          : null,
     );
   }
 
@@ -65,31 +64,4 @@ class UserModel {
 
   factory UserModel.fromJson(String source) =>
       UserModel.fromMap(json.decode(source) as Map<String, dynamic>);
-
-  @override
-  String toString() {
-    return 'UserModel(id: $id, name: $name, token: $token, email: $email, password: $password, userName: $userName)';
-  }
-
-  @override
-  bool operator ==(covariant UserModel other) {
-    if (identical(this, other)) return true;
-
-    return other.id == id &&
-        other.name == name &&
-        other.token == token &&
-        other.email == email &&
-        other.password == password &&
-        other.userName == userName;
-  }
-
-  @override
-  int get hashCode {
-    return id.hashCode ^
-        name.hashCode ^
-        token.hashCode ^
-        email.hashCode ^
-        password.hashCode ^
-        userName.hashCode;
-  }
 }

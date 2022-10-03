@@ -1,10 +1,10 @@
 import 'dart:convert';
 
-class CategoryModel {
+class RoleModel {
   int? id;
   String? name;
 
-  CategoryModel({
+  RoleModel({
     this.id,
     this.name,
   });
@@ -20,8 +20,8 @@ class CategoryModel {
     return map;
   }
 
-  factory CategoryModel.fromMap(Map<String, dynamic> map) {
-    return CategoryModel(
+  factory RoleModel.fromMap(Map<String, dynamic> map) {
+    return RoleModel(
       id: map['id'] != null ? map['id'] as int : null,
       name: map['name'] != null ? map['name'] as String : null,
     );
@@ -29,6 +29,6 @@ class CategoryModel {
 
   String toJson() => json.encode(toMap());
 
-  factory CategoryModel.fromJson(String source) =>
-      CategoryModel.fromMap(json.decode(source) as Map<String, dynamic>);
+  factory RoleModel.fromJson(String source) =>
+      RoleModel.fromMap(json.decode(source) as Map<String, dynamic>);
 }

@@ -232,7 +232,7 @@ class RegistryFirstPage extends StatelessWidget {
               height: 48,
               width: double.infinity,
               child: ElevatedButton(
-                onPressed: controller.nextPage,
+                onPressed: controller.firstStepRegister,
                 child: Text(
                   'Próximo',
                   style: AppFonts.roboto.copyWith(
@@ -241,8 +241,9 @@ class RegistryFirstPage extends StatelessWidget {
                   ),
                 ),
                 style: ButtonStyle(
-                    shape: MaterialStateProperty.all(RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(12)))),
+                  shape: MaterialStateProperty.all(RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12))),
+                ),
               ),
             ),
           ),

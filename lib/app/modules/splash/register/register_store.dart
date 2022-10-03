@@ -1,5 +1,6 @@
 import 'package:asuka/asuka.dart';
 import 'package:disconts/app/modules/splash/register/register_page.dart';
+import 'package:disconts/app/shared/interfaces/user_interface.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:mobx/mobx.dart';
@@ -9,6 +10,7 @@ part 'register_store.g.dart';
 class RegisterStore = _RegisterStoreBase with _$RegisterStore;
 
 abstract class _RegisterStoreBase with Store {
+  final userRepository = Modular.get<IUser>();
   final keyForm = GlobalKey<FormState>();
 
   final nameController = TextEditingController();
@@ -66,6 +68,46 @@ abstract class _RegisterStoreBase with Store {
       isObscuredConfirmation = !isObscuredConfirmation;
       confirmationPasswordIcon = Icon(Icons.visibility_off, color: Colors.grey);
     }
+  }
+
+  @action
+  firstStepRegister() async {
+    var cpfCnpj = cpfController.text
+        .trim()
+        .replaceAll('/', '')
+        .replaceAll('.', '')
+        .replaceAll('-', '');
+    if (nameController.text.trim() == '')
+      return AsukaSnackbar.message('Necessário preencher o seu nome');
+
+    if (emailController.text.trim() == '' && emailController.text.contains('@'))
+      return AsukaSnackbar.message('Necessário preencher o seu email');
+
+    if (cpfCnpj == '')
+      return AsukaSnackbar.message('Necessário preencher o seu nome');
+
+    registerAcc();
+  }
+
+  @action
+  registerAcc() async {
+    final result = await userRepository.register(
+      name: nameController.text,
+      email: emailController.text,
+      cpfCnpj: cpfController.text
+          .trim()
+          .replaceAll('/', '')
+          .replaceAll('.', '')
+          .replaceAll('-', ''),
+    );
+
+    result.fold(
+      (l) => AsukaSnackbar.message(l.message).show(),
+      (r) {
+        print(r);
+        nextPage();
+      },
+    );
   }
 
   @action
