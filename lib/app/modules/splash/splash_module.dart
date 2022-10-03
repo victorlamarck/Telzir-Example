@@ -12,9 +12,9 @@ import 'package:flutter_modular/flutter_modular.dart';
 class SplashModule extends Module {
   @override
   final List<Bind> binds = [
-    Bind.lazySingleton((i) => LoginStore()),
+    Bind.factory((i) => LoginStore()),
+    Bind.factory((i) => RegisterStore()),
     Bind.lazySingleton((i) => SplashStore()),
-    Bind.lazySingleton((i) => RegisterStore()),
   ];
 
   @override

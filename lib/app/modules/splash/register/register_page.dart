@@ -72,158 +72,161 @@ class RegistryFirstPage extends StatelessWidget {
           ),
           const SizedBox(height: 18),
           Expanded(
-            child: ListView(
-              children: [
-                Row(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 20),
-                      child: Text(
-                        'Cadastro',
-                        style: AppFonts.openSans.copyWith(
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
+            child: Form(
+              key: controller.keyForm1,
+              child: ListView(
+                children: [
+                  Row(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 20),
+                        child: Text(
+                          'Cadastro',
+                          style: AppFonts.openSans.copyWith(
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
                       ),
-                    ),
-                  ],
-                ),
-                const SizedBox(height: 16),
-                Row(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 20),
-                      child: Text(
-                        'Seus dados',
-                        style: AppFonts.openSans.copyWith(
-                          fontSize: 16,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-                const SizedBox(height: 8),
-                Row(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 20),
-                      child: Text(
-                        'Preencha as informações abaixo:',
-                        style: AppFonts.openSans.copyWith(
-                          fontSize: 16,
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-                const SizedBox(height: 16),
-                Row(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 20),
-                      child: Text(
-                        'NOME',
-                        style: AppFonts.openSans.copyWith(
-                          fontSize: 12,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-                const SizedBox(height: 8),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 20),
-                  child: TextFormField(
-                    decoration: InputDecoration(
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(12),
-                        borderSide: BorderSide(width: 1),
-                      ),
-                    ),
-                    controller: controller.nameController,
-                    keyboardType: TextInputType.name,
-                    validator: (value) {
-                      if (value?.isEmpty ?? true) {
-                        return 'Este campo precisa ser preenchido!';
-                      }
-                      return null;
-                    },
+                    ],
                   ),
-                ),
-                const SizedBox(height: 16),
-                Row(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 20),
-                      child: Text(
-                        'E-MAIL',
-                        style: AppFonts.openSans.copyWith(
-                          fontSize: 12,
-                          fontWeight: FontWeight.bold,
+                  const SizedBox(height: 16),
+                  Row(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 20),
+                        child: Text(
+                          'Seus dados',
+                          style: AppFonts.openSans.copyWith(
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
                       ),
-                    ),
-                  ],
-                ),
-                const SizedBox(height: 8),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 20),
-                  child: TextFormField(
-                    decoration: InputDecoration(
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(12),
-                        borderSide: BorderSide(width: 1),
-                      ),
-                    ),
-                    controller: controller.emailController,
-                    keyboardType: TextInputType.emailAddress,
-                    validator: (value) {
-                      if (value?.isEmpty ?? true) {
-                        return 'Este campo precisa ser preenchido!';
-                      }
-                      return null;
-                    },
+                    ],
                   ),
-                ),
-                const SizedBox(height: 16),
-                Row(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 20),
-                      child: Text(
-                        'CPF/CNPJ',
-                        style: AppFonts.openSans.copyWith(
-                          fontSize: 12,
-                          fontWeight: FontWeight.bold,
+                  const SizedBox(height: 8),
+                  Row(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 20),
+                        child: Text(
+                          'Preencha as informações abaixo:',
+                          style: AppFonts.openSans.copyWith(
+                            fontSize: 16,
+                          ),
                         ),
                       ),
-                    ),
-                  ],
-                ),
-                const SizedBox(height: 8),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 20),
-                  child: TextFormField(
-                    decoration: InputDecoration(
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(12),
-                        borderSide: BorderSide(width: 1),
-                      ),
-                    ),
-                    controller: controller.cpfController,
-                    keyboardType: TextInputType.emailAddress,
-                    validator: (value) {
-                      if (value?.isEmpty ?? true) {
-                        return 'Este campo precisa ser preenchido!';
-                      }
-                      return null;
-                    },
+                    ],
                   ),
-                ),
-                const SizedBox(height: 16),
-              ],
+                  const SizedBox(height: 16),
+                  Row(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 20),
+                        child: Text(
+                          'NOME',
+                          style: AppFonts.openSans.copyWith(
+                            fontSize: 12,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 8),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 20),
+                    child: TextFormField(
+                      decoration: InputDecoration(
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(12),
+                          borderSide: BorderSide(width: 1),
+                        ),
+                      ),
+                      controller: controller.nameController,
+                      keyboardType: TextInputType.name,
+                      validator: (value) {
+                        if (value?.isEmpty ?? true) {
+                          return 'Este campo precisa ser preenchido!';
+                        }
+                        return null;
+                      },
+                    ),
+                  ),
+                  const SizedBox(height: 16),
+                  Row(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 20),
+                        child: Text(
+                          'E-MAIL',
+                          style: AppFonts.openSans.copyWith(
+                            fontSize: 12,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 8),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 20),
+                    child: TextFormField(
+                      decoration: InputDecoration(
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(12),
+                          borderSide: BorderSide(width: 1),
+                        ),
+                      ),
+                      controller: controller.emailController,
+                      keyboardType: TextInputType.emailAddress,
+                      validator: (value) {
+                        if (value?.isEmpty ?? true) {
+                          return 'Este campo precisa ser preenchido!';
+                        }
+                        return null;
+                      },
+                    ),
+                  ),
+                  const SizedBox(height: 16),
+                  Row(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 20),
+                        child: Text(
+                          'CPF/CNPJ',
+                          style: AppFonts.openSans.copyWith(
+                            fontSize: 12,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 8),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 20),
+                    child: TextFormField(
+                      decoration: InputDecoration(
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(12),
+                          borderSide: BorderSide(width: 1),
+                        ),
+                      ),
+                      controller: controller.cpfController,
+                      keyboardType: TextInputType.emailAddress,
+                      validator: (value) {
+                        if (value?.isEmpty ?? true) {
+                          return 'Este campo precisa ser preenchido!';
+                        }
+                        return null;
+                      },
+                    ),
+                  ),
+                  const SizedBox(height: 16),
+                ],
+              ),
             ),
           ),
           Padding(
@@ -232,7 +235,7 @@ class RegistryFirstPage extends StatelessWidget {
               height: 48,
               width: double.infinity,
               child: ElevatedButton(
-                onPressed: controller.firstStepRegister,
+                onPressed: controller.firstStepValidate,
                 child: Text(
                   'Próximo',
                   style: AppFonts.roboto.copyWith(
@@ -293,114 +296,117 @@ class RegistrySecondPage extends StatelessWidget {
           ),
           const SizedBox(height: 18),
           Expanded(
-            child: ListView(
-              children: [
-                Row(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 20),
-                      child: Text(
-                        'Cadastro',
-                        style: AppFonts.openSans.copyWith(
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
+            child: Form(
+              key: controller.keyForm2,
+              child: ListView(
+                children: [
+                  Row(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 20),
+                        child: Text(
+                          'Cadastro',
+                          style: AppFonts.openSans.copyWith(
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
                       ),
-                    ),
-                  ],
-                ),
-                const SizedBox(height: 16),
-                Row(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 20),
-                      child: Text(
-                        'Validar e-mail',
-                        style: AppFonts.openSans.copyWith(
-                          fontSize: 16,
-                          fontWeight: FontWeight.bold,
+                    ],
+                  ),
+                  const SizedBox(height: 16),
+                  Row(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 20),
+                        child: Text(
+                          'Validar e-mail',
+                          style: AppFonts.openSans.copyWith(
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
                       ),
+                    ],
+                  ),
+                  const SizedBox(height: 8),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 20),
+                    child: SizedBox(
+                      height: 50,
+                      child: Row(
+                        children: [
+                          Expanded(
+                            child: Text(
+                              'Para validar seu e-mail como um e-mail seguro, Insira o código que enviamos por seu e-mail.',
+                              style: AppFonts.openSans.copyWith(
+                                fontSize: 16,
+                              ),
+                              maxLines: 3,
+                              overflow: TextOverflow.ellipsis,
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
-                  ],
-                ),
-                const SizedBox(height: 8),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 20),
-                  child: SizedBox(
-                    height: 50,
+                  ),
+                  const SizedBox(height: 16),
+                  Row(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 20),
+                        child: Text(
+                          'CÓDIGO',
+                          style: AppFonts.openSans.copyWith(
+                            fontSize: 12,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 8),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 20),
+                    child: TextFormField(
+                      decoration: InputDecoration(
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(12),
+                          borderSide: BorderSide(width: 1),
+                        ),
+                      ),
+                      controller: controller.tokenFromEmailController,
+                      keyboardType: TextInputType.text,
+                      validator: (value) {
+                        if (value?.isEmpty ?? true) {
+                          return 'Este campo precisa ser preenchido!';
+                        }
+                        return null;
+                      },
+                    ),
+                  ),
+                  const SizedBox(height: 18),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 12),
                     child: Row(
                       children: [
-                        Expanded(
+                        TextButton(
                           child: Text(
-                            'Para validar seu e-mail como um e-mail seguro, Insira o código que enviamos por seu e-mail.',
-                            style: AppFonts.openSans.copyWith(
-                              fontSize: 16,
+                            'NÃO RECEBI O CÓDIGO',
+                            style: AppFonts.roboto.copyWith(
+                              fontSize: 12,
+                              fontWeight: FontWeight.w900,
+                              color: AppColors.green,
                             ),
-                            maxLines: 3,
-                            overflow: TextOverflow.ellipsis,
+                            textAlign: TextAlign.center,
                           ),
+                          onPressed: () {},
                         ),
                       ],
                     ),
                   ),
-                ),
-                const SizedBox(height: 16),
-                Row(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 20),
-                      child: Text(
-                        'CÓDIGO',
-                        style: AppFonts.openSans.copyWith(
-                          fontSize: 12,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-                const SizedBox(height: 8),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 20),
-                  child: TextFormField(
-                    decoration: InputDecoration(
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(12),
-                        borderSide: BorderSide(width: 1),
-                      ),
-                    ),
-                    controller: controller.tokenFromEmailController,
-                    keyboardType: TextInputType.text,
-                    validator: (value) {
-                      if (value?.isEmpty ?? true) {
-                        return 'Este campo precisa ser preenchido!';
-                      }
-                      return null;
-                    },
-                  ),
-                ),
-                const SizedBox(height: 18),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 12),
-                  child: Row(
-                    children: [
-                      TextButton(
-                        child: Text(
-                          'NÃO RECEBI O CÓDIGO',
-                          style: AppFonts.roboto.copyWith(
-                            fontSize: 12,
-                            fontWeight: FontWeight.w900,
-                            color: AppColors.green,
-                          ),
-                          textAlign: TextAlign.center,
-                        ),
-                        onPressed: () {},
-                      ),
-                    ],
-                  ),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
           Padding(
@@ -434,7 +440,7 @@ class RegistrySecondPage extends StatelessWidget {
                 Expanded(
                   flex: 2,
                   child: ElevatedButton(
-                    onPressed: controller.nextPage,
+                    onPressed: controller.secondStepValidate,
                     child: Text(
                       'Próximo',
                       style: AppFonts.roboto.copyWith(
@@ -498,148 +504,151 @@ class RegistryThirdPage extends StatelessWidget {
           ),
           const SizedBox(height: 18),
           Expanded(
-            child: ListView(
-              children: [
-                Row(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 20),
-                      child: Text(
-                        'Cadastro',
-                        style: AppFonts.openSans.copyWith(
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
+            child: Form(
+              key: controller.keyForm3,
+              child: ListView(
+                children: [
+                  Row(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 20),
+                        child: Text(
+                          'Cadastro',
+                          style: AppFonts.openSans.copyWith(
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
                       ),
-                    ),
-                  ],
-                ),
-                const SizedBox(height: 16),
-                Row(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 20),
-                      child: Text(
-                        'Criar senha de acesso',
-                        style: AppFonts.openSans.copyWith(
-                          fontSize: 16,
-                          fontWeight: FontWeight.bold,
+                    ],
+                  ),
+                  const SizedBox(height: 16),
+                  Row(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 20),
+                        child: Text(
+                          'Criar senha de acesso',
+                          style: AppFonts.openSans.copyWith(
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
                       ),
-                    ),
-                  ],
-                ),
-                const SizedBox(height: 8),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 20),
-                  child: SizedBox(
-                    height: 50,
-                    child: Row(
-                      children: [
-                        Expanded(
-                          child: Text(
-                            'Crie e confirme uma senha para que você possa acessar o app',
-                            style: AppFonts.openSans.copyWith(
-                              fontSize: 16,
+                    ],
+                  ),
+                  const SizedBox(height: 8),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 20),
+                    child: SizedBox(
+                      height: 50,
+                      child: Row(
+                        children: [
+                          Expanded(
+                            child: Text(
+                              'Crie e confirme uma senha para que você possa acessar o app',
+                              style: AppFonts.openSans.copyWith(
+                                fontSize: 16,
+                              ),
+                              maxLines: 2,
+                              overflow: TextOverflow.ellipsis,
                             ),
-                            maxLines: 2,
-                            overflow: TextOverflow.ellipsis,
                           ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-                const SizedBox(height: 16),
-                Row(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 20),
-                      child: Text(
-                        'NOVA SENHA',
-                        style: AppFonts.openSans.copyWith(
-                          fontSize: 12,
-                          fontWeight: FontWeight.bold,
-                        ),
+                        ],
                       ),
                     ),
-                  ],
-                ),
-                const SizedBox(height: 8),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 20),
-                  child: Observer(
-                    builder: (_) {
-                      return TextFormField(
-                        obscureText: controller.isObscuredNew,
-                        decoration: InputDecoration(
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(12),
-                            borderSide: BorderSide(width: 1),
-                          ),
-                          suffixIcon: IconButton(
-                            icon: controller.newPasswordIcon,
-                            onPressed: controller.showNewPassword,
-                          ),
-                        ),
-                        controller: controller.passwordController,
-                        keyboardType: TextInputType.text,
-                        validator: (value) {
-                          if (value?.isEmpty ?? true) {
-                            return 'Este campo precisa ser preenchido!';
-                          }
-                          return null;
-                        },
-                      );
-                    },
                   ),
-                ),
-                const SizedBox(height: 16),
-                Row(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 20),
-                      child: Text(
-                        'CONFIRMAR NOVA SENHA',
-                        style: AppFonts.openSans.copyWith(
-                          fontSize: 12,
-                          fontWeight: FontWeight.bold,
+                  const SizedBox(height: 16),
+                  Row(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 20),
+                        child: Text(
+                          'NOVA SENHA',
+                          style: AppFonts.openSans.copyWith(
+                            fontSize: 12,
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
                       ),
-                    ),
-                  ],
-                ),
-                const SizedBox(height: 8),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 20),
-                  child: Observer(
-                    builder: (_) {
-                      return TextFormField(
-                        obscureText: controller.isObscuredConfirmation,
-                        decoration: InputDecoration(
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(12),
-                            borderSide: BorderSide(width: 1),
+                    ],
+                  ),
+                  const SizedBox(height: 8),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 20),
+                    child: Observer(
+                      builder: (_) {
+                        return TextFormField(
+                          obscureText: controller.isObscuredNew,
+                          decoration: InputDecoration(
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(12),
+                              borderSide: BorderSide(width: 1),
+                            ),
+                            suffixIcon: IconButton(
+                              icon: controller.newPasswordIcon,
+                              onPressed: controller.showNewPassword,
+                            ),
                           ),
-                          suffixIcon: IconButton(
-                            icon: controller.confirmationPasswordIcon,
-                            onPressed: controller.showConfirmationPassword,
+                          controller: controller.passwordController,
+                          keyboardType: TextInputType.text,
+                          validator: (value) {
+                            if (value?.isEmpty ?? true) {
+                              return 'Este campo precisa ser preenchido!';
+                            }
+                            return null;
+                          },
+                        );
+                      },
+                    ),
+                  ),
+                  const SizedBox(height: 16),
+                  Row(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 20),
+                        child: Text(
+                          'CONFIRMAR NOVA SENHA',
+                          style: AppFonts.openSans.copyWith(
+                            fontSize: 12,
+                            fontWeight: FontWeight.bold,
                           ),
                         ),
-                        controller: controller.passwordConfirmationController,
-                        keyboardType: TextInputType.text,
-                        validator: (value) {
-                          if (value?.isEmpty ?? true) {
-                            return 'Este campo precisa ser preenchido!';
-                          }
-                          return null;
-                        },
-                      );
-                    },
+                      ),
+                    ],
                   ),
-                ),
-                const SizedBox(height: 16),
-              ],
+                  const SizedBox(height: 8),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 20),
+                    child: Observer(
+                      builder: (_) {
+                        return TextFormField(
+                          obscureText: controller.isObscuredConfirmation,
+                          decoration: InputDecoration(
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(12),
+                              borderSide: BorderSide(width: 1),
+                            ),
+                            suffixIcon: IconButton(
+                              icon: controller.confirmationPasswordIcon,
+                              onPressed: controller.showConfirmationPassword,
+                            ),
+                          ),
+                          controller: controller.passwordConfirmationController,
+                          keyboardType: TextInputType.text,
+                          validator: (value) {
+                            if (value?.isEmpty ?? true) {
+                              return 'Este campo precisa ser preenchido!';
+                            }
+                            return null;
+                          },
+                        );
+                      },
+                    ),
+                  ),
+                  const SizedBox(height: 16),
+                ],
+              ),
             ),
           ),
           Padding(
@@ -682,7 +691,7 @@ class RegistryThirdPage extends StatelessWidget {
               height: 48,
               width: double.infinity,
               child: ElevatedButton(
-                onPressed: controller.registerAccount,
+                onPressed: controller.thirdStepValidate,
                 child: Text(
                   'Cadastrar',
                   style: AppFonts.roboto.copyWith(

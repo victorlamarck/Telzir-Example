@@ -107,6 +107,22 @@ mixin _$RegisterStore on _RegisterStoreBase, Store {
     });
   }
 
+  late final _$userAtom =
+      Atom(name: '_RegisterStoreBase.user', context: context);
+
+  @override
+  UserModel? get user {
+    _$userAtom.reportRead();
+    return super.user;
+  }
+
+  @override
+  set user(UserModel? value) {
+    _$userAtom.reportWrite(value, super.user, () {
+      super.user = value;
+    });
+  }
+
   late final _$firstStepRegisterAsyncAction =
       AsyncAction('_RegisterStoreBase.firstStepRegister', context: context);
 
@@ -115,12 +131,21 @@ mixin _$RegisterStore on _RegisterStoreBase, Store {
     return _$firstStepRegisterAsyncAction.run(() => super.firstStepRegister());
   }
 
-  late final _$registerAccAsyncAction =
-      AsyncAction('_RegisterStoreBase.registerAcc', context: context);
+  late final _$secondStepRegisterAsyncAction =
+      AsyncAction('_RegisterStoreBase.secondStepRegister', context: context);
 
   @override
-  Future registerAcc() {
-    return _$registerAccAsyncAction.run(() => super.registerAcc());
+  Future secondStepRegister() {
+    return _$secondStepRegisterAsyncAction
+        .run(() => super.secondStepRegister());
+  }
+
+  late final _$thirdStepRegisterAsyncAction =
+      AsyncAction('_RegisterStoreBase.thirdStepRegister', context: context);
+
+  @override
+  Future thirdStepRegister() {
+    return _$thirdStepRegisterAsyncAction.run(() => super.thirdStepRegister());
   }
 
   late final _$registerAccountAsyncAction =
@@ -179,6 +204,39 @@ mixin _$RegisterStore on _RegisterStoreBase, Store {
   }
 
   @override
+  dynamic firstStepValidate() {
+    final _$actionInfo = _$_RegisterStoreBaseActionController.startAction(
+        name: '_RegisterStoreBase.firstStepValidate');
+    try {
+      return super.firstStepValidate();
+    } finally {
+      _$_RegisterStoreBaseActionController.endAction(_$actionInfo);
+    }
+  }
+
+  @override
+  dynamic secondStepValidate() {
+    final _$actionInfo = _$_RegisterStoreBaseActionController.startAction(
+        name: '_RegisterStoreBase.secondStepValidate');
+    try {
+      return super.secondStepValidate();
+    } finally {
+      _$_RegisterStoreBaseActionController.endAction(_$actionInfo);
+    }
+  }
+
+  @override
+  dynamic thirdStepValidate() {
+    final _$actionInfo = _$_RegisterStoreBaseActionController.startAction(
+        name: '_RegisterStoreBase.thirdStepValidate');
+    try {
+      return super.thirdStepValidate();
+    } finally {
+      _$_RegisterStoreBaseActionController.endAction(_$actionInfo);
+    }
+  }
+
+  @override
   String toString() {
     return '''
 isObscuredNew: ${isObscuredNew},
@@ -186,7 +244,8 @@ isObscuredConfirmation: ${isObscuredConfirmation},
 newPasswordIcon: ${newPasswordIcon},
 confirmationPasswordIcon: ${confirmationPasswordIcon},
 indexPage: ${indexPage},
-checkBox: ${checkBox}
+checkBox: ${checkBox},
+user: ${user}
     ''';
   }
 }
